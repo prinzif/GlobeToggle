@@ -17,3 +17,11 @@ GlobeToggle handles the switch directly. Briefly tap Fn/🌐 to move to the next
 That's it. Short tap to switch; holds and keyboard chords keep their usual role. The menu includes Pause/Resume, settings, and a quick guide.
 
 If macOS blocks opening, use **Privacy & Security → Open Anyway** after attempting to launch. This app is locally signed, not notarized by Apple. After an update, you may need to remove and re-add its Input Monitoring permission.
+
+## Source code & privacy
+
+Input Monitoring is needed to detect Fn/Globe taps and distinguish them from keyboard chords. The app observes Fn transitions and key-down events; it does not log keystrokes, store typed text, collect analytics, or make network requests.
+
+The complete app code is in [GlobeToggle.swift](GlobeToggle.swift) and [TapGesture.swift](TapGesture.swift). Tests, icon artwork generation, and build scripts are included so you can inspect the implementation and build it yourself if you prefer. Building is optional — the DMG above is ready to install.
+
+See [build notes](docs/BUILDING.md) for instructions and compatibility limits.
